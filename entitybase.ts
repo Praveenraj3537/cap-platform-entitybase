@@ -21,7 +21,7 @@ export class EntityBase {
   Id: number
 
   @CreateDateColumn({
-    name: 'creation_date',
+    name: 'CreationDate',
     nullable: false,
     type: 'timestamp with time zone',
     default: () => 'CURRENT_TIMESTAMP',
@@ -29,19 +29,19 @@ export class EntityBase {
   CreationDate: Date
 
   @CreateDateColumn({
-    name: 'modified_date',
+    name: 'ModifiedDate',
     type: 'timestamp with time zone',
     nullable: true,
     default: () => 'CURRENT_TIMESTAMP',
   })
   ModifiedDate: Date
 
-  @Column({ name: 'created_by', nullable: true })
+  @Column({ name: 'CreatedBy', nullable: true })
   CreatedBy: number
 
-  @Column({ name: 'modified_by', nullable: true })
+  @Column({ name: 'ModifiedBy', nullable: true })
   ModifiedBy: number
 
-  @VersionColumn({ name: 'row_version', nullable: true }) //({ type: "bytea", nullable: true })
+  @VersionColumn({ name: 'RowVersion', nullable: true }) //({ type: "bytea", nullable: true })
   RowVersion: number
 }
